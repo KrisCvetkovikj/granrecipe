@@ -1,0 +1,41 @@
+<ion-view title="Create Recipe" id="page6">
+	<ion-content padding="true" class="has-header">
+		<ion-list>
+			<ion-item>
+				<ion-label color="primary">Title</ion-label>
+				<input ng-model="recipe.title"></input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary">Description</ion-label>
+				<textarea ng-model="recipe.desc"></textarea>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary">Calories</ion-label>
+				<input ng-model="recipe.calories"></input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary">Carbohydrates</ion-label>
+				<input ng-model="recipe.carbs"></input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary">Fats</ion-label>
+				<input ng-model="recipe.fats"></input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary">Protein</ion-label>
+				<input ng-model="recipe.protein"></input>
+			</ion-item>
+
+			<ion-checkbox ng-model="recipe.public">Public?</ion-checkbox>
+		</ion-list>
+		<div class="padding">
+			<button type="button" ng-click="createRecipe()" class="button button-block button-balanced">Create Recipe
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

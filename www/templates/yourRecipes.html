@@ -1,0 +1,111 @@
+<ion-view title="Your recipes" id="page5">
+	<ion-content padding="true" class="has-header">
+		<ion-list id="yourRecipes-list2" ng-if="recipes.length > 0">
+			<ion-item ng-repeat="recipe in recipes" id="yourRecipes-list-item5" ng-click="viewDetails(recipe)">
+				{{recipe.title}}
+			</ion-item>
+			<hr/>
+		</ion-list>
+		<ion-label style="margin-top: 50%; padding-left: 40%" ng-if="!recipes || (recipes.length === 0)">
+			<span>You don't have any recipes. Create one now?</span>
+			<br>
+			<br>
+			<button class="button" ng-click="openModal()">Create</button>
+		</ion-label>
+	</ion-content>
+</ion-view>
+
+<script id="my-modal.html" type="text/ng-template">
+	<ion-modal-view>
+		<ion-header-bar class="bar bar-header bar-positive">
+			<h1 class="title">New Recipe</h1>
+			<button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+		</ion-header-bar>
+		<ion-content class="padding">
+			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">Name</span>
+					<input ng-model="recipe.title" type="text">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Description</span>
+					<input ng-model="recipe.desc" type="text">
+				</label>
+
+				<!--<div ng-if="recipe.ingredients && recipe.ingredients.length > 0">
+					<div class="row">
+						<div class="col">Name</div>
+						<div class="col">Calories</div>
+						<div class="col">Carbs</div>
+						<div class="col">Fat</div>
+						<div class="col">Protein</div>
+					</div>
+					<div class="row" ng-repeat="ingredient in recipe.ingredients track by $index">
+						<div class="col">{{ingredient.name}}</div>
+						<div class="col">{{ingredient.calories}}</div>
+						<div class="col">{{ingredient.carbohydrates}}</div>
+						<div class="col">{{ingredient.fat}}</div>
+						<div class="col">{{ingredient.protein}}</div>
+					</div>
+				</div>
+
+				<br>
+				<ion-label>
+					<span class="item-stacked-label">Ingredient</span>
+				</ion-label>
+
+				<label class="item item-input">
+					<span class="input-label">Name</span>
+					<input ng-model="ingredient.name" type="text" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Calories</span>
+					<input ng-model="ingredient.calories" type="number" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Carbohydrates</span>
+					<input ng-model="ingredient.carbohydrates" type="number" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Fat</span>
+					<input ng-model="ingredient.fat" type="number" required>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Protein</span>
+					<input ng-model="ingredient.protein" type="number" required>
+				</label>
+
+				<button ng-if="ingredient" class="button button-bar button-balanced" ng-click="addIngredient()">Add
+					Ingredient
+				</button>-->
+
+				<br>
+				<ion-label>
+					<span class="item-stacked-label">Stats:</span>
+				</ion-label>
+
+				<label class="item item-input">
+					<span class="input-label">Calories</span>
+					<input ng-model="recipe.calories" type="number" required>
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Carbohydrates</span>
+					<input ng-model="recipe.carbs" type="number" required>
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Fat</span>
+					<input ng-model="recipe.fats" type="number" required>
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Protein</span>
+					<input ng-model="recipe.protein" type="number" required>
+				</label>
+
+				<button class="button button-full button-positive" ng-click="createRecipe()">Create</button>
+			</div>
+		</ion-content>
+	</ion-modal-view>
+</script>

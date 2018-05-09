@@ -1,0 +1,25 @@
+<ion-nav-view title="Your recipes" id="page5">
+	<ion-content padding="true" class="has-header">
+		<ion-list id="recipeDetails">
+
+			<h2>{{recipe.title}}</h2>
+
+			<ion-label>Description:</ion-label>
+			<p>{{recipe.desc}}</p>
+
+			<ion-label>Calories:</ion-label>
+			<p>{{recipe.calories}}</p>
+
+			<ion-label>Carbohydrates:</ion-label>
+			<p>{{recipe.carbs}}</p>
+
+			<ion-label>Fat:</ion-label>
+			<p>{{recipe.fats}}</p>
+
+			<ion-label>Protein:</ion-label>
+			<p>{{recipe.protein}}</p>
+
+			<button class="button button-assertive" ng-click="removeRecipe(recipe)">Delete</button>
+		</ion-list>
+	</ion-content>
+</ion-nav-view>
